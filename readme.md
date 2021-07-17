@@ -53,7 +53,7 @@ The app can be deployed to the Heroku platform or can be made into a docker cont
 
 ## Getting Started
 
-To get a local copy up and running by following these steps.
+Get a local copy up and running by following these steps.
 
 ### Prerequisites
 
@@ -65,7 +65,7 @@ Make sure that python is install in your system. If it is not installed, head ov
    ```sh
    https://github.com/pauljoe775/fake-news-prediction.git
    ```
-2. cd into the directory
+2. Change into the directory
    ```sh
    cd fake-news-prediction
    ```
@@ -87,11 +87,11 @@ Make sure that python is install in your system. If it is not installed, head ov
 
 - Using the web GUI:
 
-  1.  Fill in the input box with the news you would like to verify
+  -. Fill in the input box with the news you would like to verify
 
       ![alt text](https://raw.githubusercontent.com/pauljoe775/fake-news-prediction/main/screenshots/image1.jpg)
 
-  2.  Once you click the submit button, you will recieve an alert showing whether the news is reliable or not.
+  -. Once you click the submit button, you will recieve an alert showing whether the news is reliable or not.
 
       ![alt text](https://raw.githubusercontent.com/pauljoe775/fake-news-prediction/main/screenshots/image2.jpg)
 
@@ -109,7 +109,7 @@ Make sure that python is install in your system. If it is not installed, head ov
 
   ```sh
   {
-  	"prediction":"1"
+  	"prediction": 1
   }
   ```
 
@@ -119,7 +119,23 @@ Make sure that python is install in your system. If it is not installed, head ov
 
 ## Docker
 
-<!-- ACKNOWLEDGEMENTS -->
+- Using the dockerfile:
+
+  - A docker file is present in the repo with wich you can build a docker image. To build it run:
+
+  ```sh
+  docker build . -t fake-news-docker
+  ```
+
+  - Once the build process has been completed, run the container by executing the following command. Do note that it will take a while for it to start.
+
+  ```sh
+  docker run -d -p 8000:8000 --name fake-news-prediction fake-news-docker
+  ```
+
+  - Now you can navigate to http://0.0.0.0:8000 to view the web GUI or alternatively use the API.
+
+ <!-- ACKNOWLEDGEMENTS -->
 
 ## Acknowledgements
 
