@@ -3,8 +3,7 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,visualstudiocode,jupyternotebooks
 .gitignore
 .python-version
-.vscode/settings.json
-
+.deta
 
 ### JupyterNotebooks ###
 # gitignore template for Jupyter Notebooks
