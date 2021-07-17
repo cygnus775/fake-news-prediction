@@ -85,7 +85,7 @@ your OS and set it up.
 
 - Using the webpage:
   1.  Fill in the input box in the webpage with the news you would like to verify
-      ![alt text](https://github.com/pauljoe775/fake-news/screenshots/image1.jpg?raw=true)
+      ![alt text](https://raw.githubusercontent.com/pauljoe775/fake-news/main/screenshots/image1.jpg)
   2.  Once you click the submit button, you will recieve an alert showing whether the news is fake or not.
       ![alt text](https://github.com/pauljoe775/fake-news/screenshots/image2.jpg?raw=true)
 - Using the API:
