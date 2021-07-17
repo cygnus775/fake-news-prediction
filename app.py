@@ -14,18 +14,19 @@ import pickle
 from fastapi import FastAPI
 from pydantic import BaseModel
 
-
-class news(BaseModel):
-    news_text: str
-
-
-app = FastAPI()
-
-df = pd.read_csv('./Data/train.csv')
-df.dropna(inplace=True)
-df.reset_index(inplace=True)
-df.drop(['index', 'id', 'title', 'author'], axis=1, inplace=True)
 lemmatizer = WordNetLemmatizer()
+
+df = pd.read_csv('Data/cleaned.csv')
+X = df['text']
+Y = df['label']
+X_train, X_test, Y_train, Y_test = train_test_split(
+    X, Y, test_size=0.8, random_state=2)
+print('ok till train test split')
+cv = CountVectorizer(max_features=5000, ngram_range=(1, 3))
+x_train = cv.fit_transform(X_train)
+filename = './Model/fake_news_model.sav'
+loaded_model = pickle.load(open(filename, 'rb'))
+print('Fullly up!')
 
 
 def clean_up(x):
@@ -40,30 +41,36 @@ def clean_up(x):
     return " ".join(fin)
 
 
-df['text'] = df['text'].apply(lambda x: clean_up(x))
-
-X = df['text']
-Y = df['label']
-X_train, X_test, Y_train, Y_test = train_test_split(
-    X, Y, test_size=0.8, random_state=2)
-
-cv = CountVectorizer(max_features=5000, ngram_range=(1, 3))
-x_train = cv.fit_transform(X_train)
-x_test = cv.transform(X_test)
-
-filename = './Model/fake_news_model.sav'
-loaded_model = pickle.load(open(filename, 'rb'))
+class news(BaseModel):
+    news_text: str
 
 
-@app.get('/'):
-def home():
+app = FastAPI()
+
+
+@app.get('/')
+async def home():
     return {'message': 'Success'}
 
 
-@app.post('/predict'):
-async def predict(news: news):
-    print(news.news_text)
+@app.post('/predict')
+def predict(news: news):
+    """ df = pd.read_csv('Data/cleaned.csv')
+    X = df['text']
+    Y = df['label']
+    X_train, X_test, Y_train, Y_test = train_test_split(
+        X, Y, test_size=0.8, random_state=2)
+    print('ok till train test split')
+    cv = CountVectorizer(max_features=5000, ngram_range=(1, 3))
+    x_train = cv.fit_transform(X_train)
+    filename = './Model/fake_news_model.sav'
+    loaded_model = pickle.load(open(filename, 'rb')) """
     input_text = news.news_text
-    vectorized_input_text = cv.transform(input_text)
+    print(type(input_text))
+    print("ok till input_text")
+    clean_text = clean_up(input_text)
+    vectorized_input_text = cv.transform([clean_text])
     prediction = loaded_model.predict(vectorized_input_text)
-    return prediction
+    pred_dict = {'prediction': int(prediction)}
+
+    return pred_dict
