@@ -1,9 +1,7 @@
 <p align="center">
 
   <h1 align="center">Fake News Classifier</h1>
-
   <p align="center">
-    </br>
 	A simple python app to classify fake vs real news
   </p>
 </p>
