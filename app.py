@@ -20,6 +20,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI
 from pydantic import BaseModel
 
+nltk.download('all')
 lemmatizer = WordNetLemmatizer()
 
 df = pd.read_csv('Data/cleaned.csv')
@@ -80,7 +81,6 @@ async def home(request: Request):
 def predict(News: news):
     input_text = News.news_text
     print(type(input_text))
-    print("ok till input_text")
     clean_text = clean_up(input_text)
     vectorized_input_text = cv.transform([clean_text])
     prediction = loaded_model.predict(vectorized_input_text)

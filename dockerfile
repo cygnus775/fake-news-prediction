@@ -6,5 +6,6 @@ RUN pip3 install gunicorn uvloop httptools
 COPY . /app
 WORKDIR /app
 RUN pip3 install -r requirements.txt
+RUN python3 -m nltk.downloader all
 EXPOSE 8000
 CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
