@@ -34,11 +34,11 @@
 ## About The Project
 
 <p>
-This is a simple pyhton app that can predict fake news and real news. This project uses a simple Logistic Regression algorithm to classify real news from fake news. The algorithm is trained on the kaggle "Fake News" competition dataset. <b><i>Do note that this dataset is old and outdated and this wont be reliable for current news articles.</i></b> The application is build with python using fast-api.
+This is a simple pyhton app that can predict fake news vs real news. This project uses a simple Logistic Regression algorithm for classification. The algorithm is trained on the kaggle "Fake News" competition dataset. <b><i>Do note that this dataset is old and outdated and this wont be reliable for current news articles.</i></b> The application is build with python using fast-api.
 
-The application has a web GUI as well as an API to which the news article can be provided and the output will be returned. The application is capable of automatically cleaning the text from special characters and stopwords using the NLTK toolkit. The user need not preprocess the text. The vectorization of the text is performed by the count vectorizer present in the sklearn library.
+The application has a web GUI as well as an API to which the news article can be provided and the output will be returned. The application is capable of automatically cleaning the special characters and stopwords from the passed text using the NLTK toolkit. The user need not preprocess the text. The vectorization of the text is performed by the count vectorizer present in the sklearn library.
 
-The app can be deployed to the Heroku platform or can be made into a docker container. The associated files are present in the repo. Do note that the app exceeds the memory limit set by Heroku for free-tier during startup.
+The app can be deployed to the Heroku platform or can be made into a docker container. The associated files are present in the repo. Do note that the app exceeds the memory limit set by Heroku for free-tier during the inital startup.
 
 </p>
 
@@ -65,16 +65,20 @@ Make sure that python is install in your system. If it is not installed, head ov
    ```sh
    https://github.com/pauljoe775/fake-news-prediction.git
    ```
-2. Install the required packages
+2. cd into the directory
+   ```sh
+   cd fake-news-prediction
+   ```
+3. Install the required packages
    ```sh
    pip install -r requirements.txt
    ```
-3. Run the application. It will take couple of minutes to fully load.
+4. Run the application. It will take couple of minutes to fully load.
    ```sh
    uvicorn app:app --host 0.0.0.0 --port 5000
    ```
-4. Open your browser and head over to the following link:
-   http://0.0.0.0:5000 .
+5. Open your browser and head over to the following link:
+   http://0.0.0.0:5000.
    You should now be able to see a webpage.
 
 <!-- USAGE EXAMPLES -->

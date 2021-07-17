@@ -27,12 +27,10 @@ X = df['text']
 Y = df['label']
 X_train, X_test, Y_train, Y_test = train_test_split(
     X, Y, test_size=0.8, random_state=2)
-print('ok till train test split')
 cv = CountVectorizer(max_features=5000, ngram_range=(1, 3))
 x_train = cv.fit_transform(X_train)
 filename = './Model/fake_news_model.sav'
 loaded_model = pickle.load(open(filename, 'rb'))
-print('Fullly up!')
 
 
 def clean_up(x):
@@ -70,6 +68,7 @@ app.mount(
 )
 
 template = Jinja2Templates(directory='Templates')
+print('Fullly up!')
 
 
 @app.get('/', response_class=HTMLResponse)
