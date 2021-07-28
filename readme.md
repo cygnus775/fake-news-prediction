@@ -34,7 +34,7 @@
 ## About The Project
 
 <p>
-This is a simple pyhton app that can predict fake news vs real news. This project uses a simple Logistic Regression algorithm for classification. The algorithm is trained on the kaggle "Fake News" competition dataset. <b><i>Do note that this dataset is old and outdated and this wont be reliable for current news articles.</i></b> The application is build with python using fast-api.
+This is a simple python app that can predict fake news vs real news. This project uses a simple Logistic Regression algorithm for classification. The algorithm is trained on the kaggle "Fake News" competition dataset. <b><i>Do note that this dataset is old and outdated and this wont be reliable for current news articles.</i></b> The application is build with python using fast-api.
 
 The application has a web GUI as well as an API to which the news article can be provided and the output will be returned. The application is capable of automatically cleaning the special characters and stopwords from the passed text using the NLTK toolkit. The user need not preprocess the text. The vectorization of the text is performed by the count vectorizer present in the sklearn library.
 
