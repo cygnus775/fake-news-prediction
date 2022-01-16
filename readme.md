@@ -89,11 +89,11 @@ Make sure that python is install in your system. If it is not installed, head ov
 
   - Fill in the input box with the news you would like to verify
 
-    ![alt text](https://gitlab.com/pauljoe775/fake-news-prediction/-/blob/main/screenshots/image1.jpg)
+    ![web api](screenshots/image1.jpg)
 
   - Once you click the submit button, you will recieve an alert showing whether the news is reliable or not.
 
-    ![alt text](https://gitlab.com/pauljoe775/fake-news-prediction/-/blob/main/screenshots/image2.jpg)
+    ![web api](screenshots/image2.jpg)
 
 - Using the API:
 
