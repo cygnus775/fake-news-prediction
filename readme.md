@@ -139,5 +139,4 @@ Make sure that python is install in your system. If it is not installed, head ov
 
 ## Acknowledgements
 
-- [Krish Naik](https://www.youtube.com/watch?v=MO5n5JaRotc)
 - [HTML & CSS used in this project](https://codepen.io/krisantuswanandi/pen/KxrgeZ)
