@@ -89,11 +89,11 @@ Make sure that python is install in your system. If it is not installed, head ov
 
   - Fill in the input box with the news you would like to verify
 
-    ![alt text](https://raw.githubusercontent.com/pauljoe775/fake-news-prediction/main/screenshots/image1.jpg)
+    ![alt text](https://gitlab.com/pauljoe775/fake-news-prediction/-/blob/main/screenshots/image1.jpg)
 
   - Once you click the submit button, you will recieve an alert showing whether the news is reliable or not.
 
-    ![alt text](https://raw.githubusercontent.com/pauljoe775/fake-news-prediction/main/screenshots/image2.jpg)
+    ![alt text](https://gitlab.com/pauljoe775/fake-news-prediction/-/blob/main/screenshots/image2.jpg)
 
 - Using the API:
 
@@ -115,7 +115,7 @@ Make sure that python is install in your system. If it is not installed, head ov
 
   The prediction value can be 1 or 0 of type int. 1 implying it is fake.
 
-  ![alt text](https://raw.githubusercontent.com/pauljoe775/fake-news-prediction/main/screenshots/image3.jpg)
+  ![alt text](https://gitlab.com/pauljoe775/fake-news-prediction/-/blob/main/screenshots/image3.jpg)
 
 ## Docker
 
