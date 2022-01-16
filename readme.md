@@ -115,7 +115,7 @@ Make sure that python is install in your system. If it is not installed, head ov
 
   The prediction value can be 1 or 0 of type int. 1 implying it is fake.
 
-  ![alt text](https://gitlab.com/pauljoe775/fake-news-prediction/-/blob/main/screenshots/image3.jpg)
+  ![api](screenshots/image3.jpg)
 
 ## Docker
 
